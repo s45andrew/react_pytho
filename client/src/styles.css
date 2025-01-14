@@ -1,0 +1,64 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .container {
+    background-color: grey;
+  }
+  
+  .joiner {
+    display: flex;
+    flex-direction: row;
+  }
+
+  
+  .side {
+    width:150px;
+    border-width: 1px;
+    border-color: crimson;
+    border-style: solid;
+    margin : 5px;
+    padding: 10px;
+  }
+  
+  .info {
+    background-color: black;
+    width:100%;
+    padding: 10px; margin : 5px;
+    color:white;
+  }
+  .inp { width : 130px;justify-content: space-between; 
+    align-items: center; margin-bottom: 5px; 
+  }
+  .mem{ display: flex; justify-content: space-between; 
+    align-items: center; margin-bottom: 5px; }
+  .Bjoiner {
+    display: flex;
+    flex-direction: row;
+    height:15px;
+  }
+  .b11 {
+    color:rgb(26, 248, 59); border: 0;
+    background:  none;  cursor:pointer;font-size: 28px;padding-left: 1;
+  }
+  .Jbut {
+    color:white; margin-top: 0px;margin:2px;
+    background-color:  black;  cursor:pointer;
+  }
+  .but { background: none; border: none; 
+    color: rgb(13, 13, 13); cursor: pointer; margin-left: 10px; align-items :right; }
+.but i { font-size: 1.2em; }
+
+
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  

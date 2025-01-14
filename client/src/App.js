@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import './styles.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App() {
   const [data, setData] = useState({ members: [] });
@@ -16,6 +19,7 @@ function App() {
   }, []);
 
   const addMember = () => {
+   if(newMember.length>2){ 
     fetch("members", {
       method: 'POST',
       headers: {
@@ -31,6 +35,9 @@ function App() {
       .catch(error => {
         console.error('Error adding member:', error);
       });
+    } else {
+      console.error('no stock')
+    }
   };
 
   const removeMember = (member) => {
@@ -47,26 +54,46 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Hello</h1>
-      {(typeof data.members === 'undefined') ? (
-        <p>Loading...</p>
-      ) : (
-        data.members.map((member, i) => (
-          <p key={i}>
-            {member} <button onClick={() => removeMember(member)}>Remove</button>
-          </p>
-        ))
-      )}
-      <input
-        type="text"
-        value={newMember}
-        onChange={(e) => setNewMember(e.target.value)}
-        placeholder="Add new member"
-      />
-      <button onClick={addMember}>Add Member</button>
+    <div className="joiner">
+      <div className="side">
+        <h1>Hello</h1>
+        {(typeof data.members === 'undefined') ? (
+          <p>Loading...</p>
+        ) : (
+          data.members.map((member, i) => (
+            <div className='mem' key={i}>
+             <span>{member}</span> <button className="but"onClick={() => removeMember(member)}>
+                <i className="fas fa-trash-alt" /></button>
+            </div>
+          ))
+        )}
+        <div className='joiner'>
+           <input className='inp'
+          type="text"
+          value={newMember}
+          onChange={(e) => setNewMember(e.target.value)}
+          placeholder="Add new stock"
+        />
+        <button className='b11' onClick={addMember}>+</button>
+        </div>  
+      </div>
+      <div className="info">
+      {typeof data.members === 'undefined' ? (
+  <p>loading...</p>
+) : (
+  data.members.map((member, i) => (
+    <button key={i} className="Jbut"> {member} </button>
+  ))
+)}
+<p>info page</p>
+
+          
+        <text>info page</text>
+
+      </div>
     </div>
   );
 }
 
 export default App;
+
